@@ -1,0 +1,12 @@
+{
+	"Allow"		: [
+				{"type" : "ARP", "bound" : "all"},
+				{"type" : "TCP", "bound" : "out", "port" : [80,8080,443,22]},
+				{"type" : "TCP", "bound" : "in", "port" : []},
+				{"type" : "UDP", "bound" : "all", "port" : []}
+			  ],
+	"Deny"		: [
+				{"type" : "UDP", "bound" : "out", "port" : [53]}
+			  ]
+
+}

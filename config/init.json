@@ -1,0 +1,17 @@
+{
+	"version"	: "0.0.1 test",
+	"server"	: {
+				"SyncOnStart"	: "No",
+				"IP"		: "127.0.0.1",
+				"Protocol"	: "HTTP",
+				"SyncTerm"	: 1000
+			  },
+	"config"	: {
+				"RulePath"	: "./config/rule",
+				"LogPath"	: "./config/log",
+				"ModePath"	: "./config/mode"
+			  },
+	"system"	: {
+				"NetInterFace"	: "ens33"
+			  }
+}
