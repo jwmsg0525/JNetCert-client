@@ -1,20 +1,23 @@
 from scapy.all import *
 from src import rules 
 from src import proutil
+from src import logger
 
 class PortFilter:
     def __init__(self,rule):
         self.rule = rule
         self.rule.setLayers()
+        self.log = logger.Logger()
         self.layers = self.rule.getLayers()
         self.detField = proutil.ProUtil().getDetField()
         conf.color_theme = BrightTheme()
     def detact(self,status,pkt):
         if status and self.detField == 'Deny':
-            pkt.show()
+            self.log.writeLog(pkt)
             return True
         elif status == False and self.detField == 'Allow':
-            pkt.show()
+            #pkt.show()
+            self.log.writeLog(pkt)
             return True
         return False
 

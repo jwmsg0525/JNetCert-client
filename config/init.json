@@ -1,8 +1,8 @@
 {
 	"version"	: "0.0.1 test",
 	"server"	: {
-				"SyncOnStart"	: "No",
-				"IP"		: "127.0.0.1",
+				"SyncOnStart"	: "YES",
+				"IP"		: "192.168.25.1",
 				"Protocol"	: "HTTP",
 				"SyncTerm"	: 1000
 			  },

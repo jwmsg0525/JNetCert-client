@@ -1,6 +1,6 @@
 {
+	"hash"		: "asdfasdfasfasdfsafsadfsadfsaf",
 	"Allow"		: [
-				{"type" : "ARP", "bound" : "all"},
 				{"type" : "TCP", "bound" : "out", "port" : [80,8080,443,22]},
 				{"type" : "TCP", "bound" : "in", "port" : []},
 				{"type" : "UDP", "bound" : "all", "port" : []}
