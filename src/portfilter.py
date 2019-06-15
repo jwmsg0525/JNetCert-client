@@ -1,23 +1,21 @@
 from scapy.all import *
 from src import rules 
 from src import proutil
-from src import logger
 
 class PortFilter:
     def __init__(self,rule):
         self.rule = rule
         self.rule.setLayers()
-        self.log = logger.Logger()
+        self.prou = proutil.ProUtil()
         self.layers = self.rule.getLayers()
-        self.detField = proutil.ProUtil().getDetField()
+        self.detMode = self.prou.getDetMode()
         conf.color_theme = BrightTheme()
     def detact(self,status,pkt):
-        if status and self.detField == 'Deny':
-            self.log.writeLog(pkt)
+        if status and self.detMode == 'Deny':
+            self.prou.isDetact(pkt)
             return True
-        elif status == False and self.detField == 'Allow':
-            #pkt.show()
-            self.log.writeLog(pkt)
+        elif status == False and self.detMode == 'Allow':
+            self.prou.isDetact(pkt)
             return True
         return False
 
@@ -36,4 +34,3 @@ class PortFilter:
 
     def start_sniff(self):
         sniff(prn=self.capture_callback)
-
